@@ -8,15 +8,15 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-
   connected: any;
   constructor(private af: AngularFireDatabase) {
-    this.af.object('connected').valueChanges().subscribe((value) => {
-      this.connected = value;
-    });
+    this.af
+      .object('connected')
+      .valueChanges()
+      .subscribe(value => {
+        this.connected = value;
+      });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
