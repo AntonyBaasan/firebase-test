@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { ItemsModule } from './items/items.module';
+import { CompanyService } from './services/company.service';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAE3HIecZZIZq078_S6iJ8Qc91k_nwbgI4',
@@ -26,6 +29,8 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
     NoopAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule, AngularFireAuthModule,
@@ -33,7 +38,9 @@ const firebaseConfig = {
     HomeModule,
     ItemsModule
   ],
-  providers: [],
+  providers: [
+    CompanyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
