@@ -13,6 +13,7 @@ export class CompanyService {
     this.company$ = this.af.object('company');
   }
 
+  // this is destructive (recrates an object)
   save(company: Company) {
     this.company$.set(company);
   }
