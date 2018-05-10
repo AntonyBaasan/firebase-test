@@ -3,6 +3,8 @@
   <h1>
     Yo {{ title }}!
   </h1>
+  <button md-button [routerLink]="['']">Home</button>
+  <button md-button [routerLink]="['/items']">Items</button>
 </div>
 
 <router-outlet></router-outlet>
